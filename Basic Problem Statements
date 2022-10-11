@@ -1,0 +1,311 @@
+# Write a Python program to get the Python version you are using.
+import sys
+
+print("system version")
+print(sys.version)
+print("systen information")
+print(sys.version_info)
+
+# ====================================
+
+#Write a Python program to display the current date and time.
+import datetime
+now=datetime.datetime.now()
+print("current date and time:")
+print(now.strftime("%d-%m-%y %H:%M:%S"))
+
+# ==============================================
+
+# Write a Python program which accepts the radius of a circle from the user and compute the area.
+r=int(input("Enter the redious of circle\n"))
+from math import pi
+a= pi*r**2
+print("Area of circle=",a)
+
+#====================================================
+
+#Write a Python program which accepts the user's first and last name and print them in reverse order with a space between them.
+a = input("Enter the first name\n")
+a = a.capitalize()
+b = input("Enter the last name\n")
+b = b.capitalize()
+print(b,a)
+
+# =======================================================
+
+#Write a Python program which accepts a sequence of comma-separated numbers from user and generate a list and a tuple with those numbers.
+#ample data : 3, 5, 7, 23
+a = input("Enter the comma seperated numbers:\n")
+a1 = a.split(",")
+print(list(a1))
+print(tuple(a1))
+
+# ==============================================
+
+#Write a Python program to accept a filename from the user and print the extension of that.
+a = input("Enter file name ")
+a1 = a.split(".")
+l=list(a1)
+print(l[1])
+
+# =============================================
+
+#Write a Python program to display the first and last colors from the following list.
+color_list = ["Red", "Green", "White", "Black"]
+a = color_list[0]
+b = color_list[3]
+print(a, b)
+print(color_list[0], color_list[3])
+
+# ==================================================
+
+#Write a Python program to display the examination schedule. (extract the date from exam_st_date).
+exam_st_date = (11, 12, 2014)
+Sample Output : The examination will start from : 11 / 12 / 2014
+a = input("Enter the exam date with comma")
+a1 = a.replace(',', '/')
+print(a1)
+
+# =====================================================
+
+#Write a Python program that accepts an integer (n) and computes the value of n+nn+nnn.
+a = input("enter the number\n")
+n1 = int(a)
+n2 = int(a+a)
+n3 = int(a+a+a)
+print(n1 + n2 + n3)
+
+# =====================================================
+
+# Write a Python program to print the calendar of a given month and year.
+
+import calendar
+m = int(input("Enter the month"))
+y = int(input("Enter the year"))
+print(calendar.month(y,m))
+
+# ============================================
+
+# Write a Python program to print the following 'here document'. 
+Sample string :
+a string that you "don't" have to escape
+This
+is a ....... multi-line
+heredoc string --------> example
+#print("""a string that you don't have to escape
+#This
+#is a ....... multi-line
+#heredoc string --------""")
+
+# ====================================================
+
+# Write a Python program to get the volume of a sphere with radius 6.
+from math import pi
+volume = 4/3 * pi * 6**3
+print(volume)
+# =======================================
+
+# Write a Python program to get the difference between a given number and 17, if the number is greater than 17 return double the absolute difference.
+a = int(input("Enter the number :"))
+if a < 17:
+    print('Difference is :', 17-a)
+elif a > 17:
+    a1 = a-17
+    a2 = a1*2
+    print('Difference is :', a2)
+    
+# ===========================================
+
+# Write a Python program to calculate the sum of three given numbers, if the values are equal then return three times of their sum.
+a = int(input('Enter the number : '))
+b = int(input('Enter the number : '))
+c = int(input('Enter the number : '))
+if a==b==c:
+    print('sum =', a*3)
+else:
+    print('sum =', a+b+c)
+    
+#  ==========================================
+
+# Write a Python program to get a new string from a given string where "Is" has been added to the front. If the given string already begins with "Is" then return the string unchanged.
+a=input('Enter the statement :')
+c = a.capitalize()
+b = c.split()
+def func1():
+    if b[0] == 'Is':
+        print(c)
+    else :
+        print('Is '+a)
+func1()
+
+# =====================================================
+
+# Write a Python program to get a string which is n (non-negative integer) copies of a given string.
+
+for i in range(0,5):
+    n = int(input("Enter the number"))
+    l = list()
+    l1 = l.an)
+    print(l)
+
+# ======================================================
+
+#Write a Python program to find whether a given number (accept from the user) is even or odd, print out an appropriate message to the user.
+a = int(input('Enter the number'))
+if a%2==0:
+    print("It is a even number")
+else:
+    print('It is a odd number ')
+
+# ===========================================================
+
+# Write a Python program to count the number 4 in a given list
+l=[1,5,4,6,4,2,8,4]
+print(l.count(4))
+
+# =================================
+
+#  Write a Python program to check whether a specified value is contained in a group of values.
+l = [1, 2, 3, 4, 5, 6]
+n = int(input('Enter the value'))
+m = l.count(n)
+if m >= 1:
+    print('It is present in the group')
+else:
+    print('It is not present in the group')
+    
+# ==================================================================
+
+# Write a Python function that takes a sequence of numbers
+# and determines whether all the numbers are different from each other.
+s = []
+k = []
+print(type(s))
+for i in range(0,6):
+    n = int(input('Entre the number'))
+    s.append(n)
+for i in s:
+    count = s.count(i)
+    k.append(count)
+k.sort()
+if k[-1]>1:
+    print('some elements are repeatative in nature')
+else:
+    print('all the numbers are different from each other')
+    
+# =============================================================
+
+# Write a Python program to create all possible strings
+# by using 'a', 'e', 'i', 'o', 'u'. Use the characters exactly once
+import random
+s = ['a', 'e', 'i', 'o', 'u']
+sum = 0
+while sum<25:
+    random.shuffle(s)
+    print(s)
+    sum +=1
+
+import random
+char_list = ['a','e','i','o','u']
+random.shuffle(char_list)
+print(''.join(char_list))
+
+# =====================================================================
+
+# Write a Python program to remove and print
+# every third number from a list of numbers until the list becomes empty.
+l = [1,2,3,4,5,6,7,9,8,5,2]
+for i in range(0,len(l)-3):
+     print(l.pop(3))
+for i in range(0,len(l)):
+    print(l.pop(0))
+    
+# ====================================================================
+
+# Write a Python program to print a long text, convert the string
+# to a list and print all the words and their frequencies.
+s = '''United States Declaration of Independence
+From Wikipedia, the free encyclopedia
+The United States Declaration of Independence is the statement
+adopted by the Second Continental Congress meeting at the Pennsylvania State
+House (Independence Hall) in Philadelphia on July 4, 1776, which announced
+that the thirteen American colonies, then at war with the Kingdom of Great
+Britain, regarded themselves as thirteen independent sovereign states, no longer
+under British rule. These states would found a new nation – the United States of
+America. John Adams was a leader in pushing for independence, which was passed
+on July 2 with no opposing vote cast. A committee of five had already drafted the
+formal declaration, to be ready when Congress voted on independence.
+
+John Adams persuaded the committee to select Thomas Jefferson to compose the original
+draft of the document, which Congress would edit to produce the final version.
+The Declaration was ultimately a formal explanation of why Congress had voted on July
+2 to declare independence from Great Britain, more than a year after the outbreak of
+the American Revolutionary War. The next day, Adams wrote to his wife Abigail: "The
+Second Day of July 1776, will be the most memorable Epocha, in the History of America."
+But Independence Day is actually celebrated on July 4, the date that the Declaration of
+Independence was approved.
+
+After ratifying the text on July 4, Congress issued the Declaration of Independence in
+several forms. It was initially published as the printed Dunlap broadside that was widely
+distributed and read to the public. The source copy used for this printing has been lost,
+and may have been a copy in Thomas Jefferson's hand.[5] Jefferson's original draft, complete
+with changes made by John Adams and Benjamin Franklin, and Jefferson's notes of changes made
+by Congress, are preserved at the Library of Congress. The best-known version of the Declaration
+is a signed copy that is displayed at the National Archives in Washington, D.C., and which is
+popularly regarded as the official document. This engrossed copy was ordered by Congress on
+July 19 and signed primarily on August 2.
+
+The sources and interpretation of the Declaration have been the subject of much scholarly inquiry.
+The Declaration justified the independence of the United States by listing colonial grievances against
+King George III, and by asserting certain natural and legal rights, including a right of revolution.
+Having served its original purpose in announcing independence, references to the text of the
+Declaration were few in the following years. Abraham Lincoln made it the centerpiece of his rhetoric
+(as in the Gettysburg Address of 1863) and his policies. Since then, it has become a well-known statement
+on human rights, particularly its second sentence:
+
+We hold these truths to be self-evident, that all men are created equal, that they are endowed by their
+Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.
+
+This has been called "one of the best-known sentences in the English language", containing "the most potent
+and consequential words in American history". The passage came to represent a moral standard to which
+the United States should strive. This view was notably promoted by Abraham Lincoln, who considered the
+Declaration to be the foundation of his political philosophy and argued that it is a statement of principles
+through which the United States Constitution should be interpreted.
+
+The U.S. Declaration of Independence inspired many other similar documents in other countries, the first
+being the 1789 Declaration of Flanders issued during the Brabant Revolution in the Austrian Netherlands
+(modern-day Belgium). It also served as the primary model for numerous declarations of independence across
+Europe and Latin America, as well as Africa (Liberia) and Oceania (New Zealand) during the first half of the
+19th century.'''
+l = list(s.split())
+d = dict()
+for i in l:
+    d.update({i:l.count(i)})
+print(d)
+
+# ==============================================
+
+# Write a Python program to count the number of each character of a given text of a text file
+f = open('text file')
+c = f.read()
+l = list(c)
+k = dict()
+for i in l:
+    cont = l.count(i)
+    k.update({i:cont})
+l1 = list(k.items())
+print(l1)
+
+# ========================================================
+
+# Write a Python program to create all possible permutations
+# from a given collection of distinct numbers.
+l = []
+for i in range (0,3):
+    n =int(input('Enter the number'))
+    l.append(n)
+for i in range(0,3):
+    for j in range(0,3):
+        for k in range(0,3):
+            if i!=j and j!=k and i!=k:
+                print(l[i],l[j],l[k])
