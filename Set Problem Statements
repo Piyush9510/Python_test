@@ -1,0 +1,289 @@
+#  Write a Python program to create a set.
+b = set()
+print(type(b))
+print(b)
+
+# =====================================================
+
+#  Write a Python program to iteration over sets.
+num_set = 0, 1, 2, 3, 4, 5
+s = set(num_set)
+for i in s:
+    print(i,end=" ")
+    
+# ========================================================
+
+# Write a Python program to add member(s) in a set.
+def f(a,b):
+    a.add(b)
+    print(a)
+
+
+f(set(),'Blue')
+f(set(),'Green')
+
+#OR
+
+s = 'My name is Piyush'
+k = set()
+s = s.split()
+k.update(s)
+print(k)
+
+# ======================================================
+
+# Write a Python program to remove item(s) from a given set.
+def f(a,b):
+    a.discard(b)
+    print(a)
+
+
+f({1,2,4,5,6,8},5)
+
+#OR
+
+f={1,2,4,5,6,8}
+k = f.pop()
+print(f)
+
+# ======================================
+
+# Write a Python program to create an intersection of sets.
+def f(a,b):
+    print(a.intersection(b))
+    print(a&b)
+
+f({'green', 'blue'}, {'blue', 'yellow'})
+
+# ======================================================
+
+# Write a Python program to create a union of sets.
+def f(a,b):
+    print(a|b)
+    print(a.union(b))
+
+
+f({'green', 'blue'}, {'blue', 'yellow'})
+f({1, 2, 3, 4, 5},{1, 5, 6, 7, 8, 9})
+
+# ===========================================================
+
+#  Write a Python program to create set difference.
+def f(a,b):
+    print(a.difference(b))
+    print(b.difference(a))
+    print(a-b)
+    print(b-a)
+
+
+f({'green', 'blue'}, {'blue', 'yellow'})
+f({1, 2, 3, 4, 5},{1, 5, 6, 7, 8, 9})
+
+# =======================================================
+
+# Write a Python program to create a symmetric difference.
+def f(a,b):
+    print(a.symmetric_difference(b))
+
+
+f({'green', 'blue'}, {'blue', 'yellow'})
+f({1, 2, 3, 4, 5},{1, 5, 6, 7, 8, 9})
+
+# =============================================================
+
+# Write a Python program to check if a set is a subset of another set.
+def f(a,b):
+    print(a.issubset(b))
+
+
+f({'green', 'blue'}, {'blue', 'yellow'})
+f({1, 2, 3, 4, 5}, {1, 5, 6, 7, 8, 9})
+f({"mango"},{"mango", "orange"})
+f({"mango", "orange"},{"mango"})
+
+# ========================================================
+
+# Write a Python program to create a shallow copy of sets.
+a = set([1, 2, 3, 4, 5])
+b = set([1, 5, 6, 7, 8, 9])
+c = a.copy()
+d=a
+print(id(c))
+print(id(a))
+print(id(d))
+
+# ============================================================
+
+# Write a Python program to remove all elements from a given set.
+def f(a):
+    print(set(a).clear())
+
+
+f([1, 2, 3, 4, 5])
+
+# ====================================================
+
+# Write a Python program to use of frozensets.
+f = frozenset([1, 2, 3, 4, 5])
+l = frozenset([3, 4, 5, 6, 7])
+print(f|l)
+print(f&l)
+
+# =======================================
+
+# Write a Python program to find maximum and the minimum value in a set.
+def f(a):
+    b=max(a)
+    print(b)
+    c=min(a)
+    print(c)
+
+
+f(set([1, 2, 3, 4, 5]))
+
+# =================================================
+
+# Write a Python program to find the length of a set.
+"""f = set([1, 2, 3, 4, 5])
+print(len(f))"""
+# ====================================================
+# Write a Python program to check if a given value is present in a set or not.
+def f(a,b):
+   if b in a:
+        print("present")
+    else:
+        print("not")
+
+
+f(set([1, 2, 3, 4, 5]),3)
+f(set([1, 2, 3, 4, 5]),7)
+
+# =======================================================================
+
+# Write a Python program to check if two given sets have no elements in common.
+def f(a,b):
+    b = set(a).symmetric_difference(set(b))
+    if len(b)>=1:
+        print('Common element present=',b)
+    else:
+        print('Common element not present')
+
+
+f([1, 2, 3, 4, 5],[3, 4, 5, 6, 7])
+
+# OR
+
+x = {1,2,3,4}
+y = {4,5,6,7}
+z = {8}
+print(x.isdisjoint(y))
+print(y.isdisjoint(x))
+print(y.isdisjoint(z))
+print((z.isdisjoint(y)))
+print(x.isdisjoint(z))
+
+# ========================================================
+
+# Write a Python program to check if a given
+# set is superset of itself and superset of another given set.
+def f(a,b):
+    print(set(a).issuperset(set(b)))
+
+f([1, 2, 3, 4, 5, 7],[2, 4])
+f([2, 4],[1, 2, 3, 4, 5, 7])
+
+# ===========================================================
+
+# Write a Python program to find the elements in a given set that are not in another set.
+def f(a,b):
+    print(set(a).difference(set(b)))
+    print(set(a)-set(b))
+    print(set(b).difference(set(a)))
+    print(set(b)-set(a))
+
+
+f([1,2,3,4,5],[4,5,6,7,8])
+
+# =========================================================
+
+# Write a Python program to remove the intersection of a 2nd set from the 1st set.
+def f(a,b):
+    c= set(a).difference_update(set(b))
+    print(c)
+    print(set(a)&set(b))
+
+
+f([1,2,3,4,5],[4,5,6,7,8])
+
+
+v = {1,2,3,4,5}
+print(id(v))
+w = {4,5,6,7,8}
+#v.difference_update(w)
+#print(v)
+v.intersection_update(w)
+print(v)
+print(id(v))
+
+#============================================
+
+# The first line contains an integer, , the number of students who have subscribed to the English newspaper.
+# The second line contains  space separated roll numbers of those students.
+# The third line contains , the number of students who have subscribed to the French newspaper.
+# The fourth line contains  space separated roll numbers of those students.
+ n = int(input('Enter the number of student who have enrollfor Engllish Newapaper'))
+    m = int(input('Enter the number of student who have enrollfor French Newapaper'))
+    print('Enter the roll numbers of {} students who have enrollfor Engllish Newapaper'.format(n))
+    l1 = set()
+    for i in range(1, n + 1):
+        k = int(input('Enter the roll number of {} student'.format(i)))
+        l1.add(k)
+    print('Enter the roll numbers of {} students who have enrollfor French Newapaper'.format(m))
+    l2 = set()
+    for i in range(1, m + 1):
+        j = int(input('Enter the roll number of {} student'.format(i)))
+        l2.add(k)
+
+    l = l1.union(l2)
+    print('Total number of students who have at least one subscription.', len(l))
+    
+#=============================================================
+
+#  Program to accept the strings which contains all vowels
+st = input("Enter the string")
+st = set(st.lower())
+v = {'a','e','i','o','u'}
+if len(st.intersection(v)) == 5:
+   print('Contains all vowels')
+else:
+   print('All vovels are not present')
+   
+# ================================================
+
+# Python program to find common elements in three lists using sets
+ar1 = [1, 5, 10, 20, 40, 80]
+ar2 = [6, 7, 20, 80, 100]
+ar3 = [3, 4, 15, 20, 30, 70, 80, 120]
+c = set(ar1).intersection(set(ar2))
+#print(c)
+print(list(c.intersection(ar3)))
+
+# ===================================================
+
+#Python | Find missing and additional values in two lists
+list1 = [1, 2, 3, 4, 5, 6]
+list2 = [4, 5, 6, 7, 8]
+print('Missing elements in the list 1',list(set(list2).difference(list1)))
+print('additional elements in the list 1',list(set(list1).difference(list2)))
+print('Missing elements in the list 2',list(set(list1).difference(list2)))
+print('additional elements in the list 2',list(set(list2).difference(list1)))
+
+# ===============================================================
+
+# Pairs of complete strings in two sets
+set1 = {"abcdefgh", "geeksforgeeks","lmnopqrst", "abc"}
+set2= {"ijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz", "defghijklmnopqrstuvwxyz"}
+for i in set1:
+    for j in set2:
+        if len(set(i).union(set(j)))==26:
+            print(i+j)
