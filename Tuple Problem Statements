@@ -1,0 +1,355 @@
+#  Write a Python program to create a tuple.
+t = ()
+print(type(t))
+
+# ====================================================
+
+# Write a Python program to create a tuple with different data types.
+def f(a):
+    t = tuple(a)
+    print(t)
+
+f([12,13.5,'a','piyush'])
+
+# ==================================================================
+
+# Write a Python program to create a tuple with numbers and print one item.
+t = 1,2,3,4,5,6,4
+print(t)
+print(t[1])
+
+# =============================================
+
+# Write a Python program to unpack a tuple in several variables.
+k = 'a',2,'n',4,5
+k1 =1,2,3,4
+n1,n2,n3,n4=k1
+print(k)
+x,y,z,k,l=k
+print(y)
+print(k)
+print(n1+n2+n3+n4)
+
+# =======================================================================
+
+# Write a Python program to add an item in a tuple.
+def f(a,c):
+    b = list(a)
+    b.append(c)
+    print(tuple(b))
+
+f((1,2,3,'k','f',5),4)
+
+t1=1,5,6,4
+t2 = t1+(5,6)
+t3 = t1[:1]+(7,8,9)+t1[1:]
+print(t3)
+print(t2)
+
+# =========================================================
+
+# Write a Python program to convert a tuple to a string.
+t1=('1','2','3','4','5','6')
+print(''.join(t1))
+
+# ====================================================================
+
+# Write a Python program to get the 4th element and 4th element from last of a tuple.
+t=1,2,3,4,5,6,7,4,8,5,3,1,45,5,3
+print(t[3])
+print(t[-4])
+
+# ======================================================
+
+# Write a Python program to create the colon of a tuple.
+import copy
+f = 1,2,'piyush',[],'Mandar'
+c = copy.copy(f)
+c1 = copy.deepcopy(f)
+print(id(f))
+print(id(c))
+print(id(c1))
+
+print(f)
+c[3].append(45)
+c1[3].append(45)
+print(c)
+print(c1)
+
+# =========================================================
+
+# Write a Python program to find the repeated items of a tuple.
+def f(a):
+
+    for i in a:
+        c = []
+        b=a.count(i)
+        c.extend([i,b])
+        print(set(c))
+
+f((2, 4, 5, 6, 2, 3, 4, 4, 7 ))
+
+#or
+
+f = (2, 4, 5, 6, 2, 3, 4, 4, 7 )
+print(f)
+print(f.count(4))
+
+# ===============================================
+
+# . Write a Python program to check whether an element exists within a tuple.
+def f(a,c):
+    if c in a:
+        print("present")
+    else:
+        print("not present")
+
+f(("w", 3, "r", "e", "s", "o", "u", "r", "c", "e"), "d")
+f(("w", 3, "r", "e", "s", "o", "u", "r", "c", "e"), 3)
+f(("w", 3, "r", "e", "s", "o", "u", "r", "c", "e"), 'r')
+
+# ================================================================
+
+# Write a Python program to convert a list to a tuple.
+l=[1,2,3,4,5,6,7,'a','b']
+print(type(l))
+print(l)
+t = tuple(l)
+print(type(t))
+print(t)
+
+# ==============================================================
+
+#  Write a Python program to remove an item from a tuple
+def f(a,b):
+    t =(1, 2, 3, 4, 5, 6, 7, 'a', 'b')
+    k = t[:b]+t[b+1:]
+    print(k)
+
+
+f((1, 2, 3, 4, 5, 6, 7, 'a', 'b'),5)
+
+#or
+
+def f(a,b):
+    c = list(a)
+    c.remove(b)
+    print(tuple(c))
+
+f((1, 2, 3, 4, 5, 6, 7, 'a', 'b'),5)
+
+# ==========================================================
+
+#Write a Python program to slice a tuple
+t = 1, 2, 3, 4, 5, 6, 7, 'a', 'b'
+print(t[8:1:-2])
+
+# =====================================================
+
+#  Write a Python program to find the index of an item of a tuple.
+def f(a,b,c):
+    print(a.index(b,c))
+
+f((1, 2, 3, 4, 5, 6, 7, 'a', 'b'), 6,2)
+
+#  =====================================================
+
+# Write a Python program to find the length of a tuple.
+t = tuple("w3resource")
+print(type(t))
+print(t)
+print(len(t))
+
+# ==================================================================
+
+# Write a Python program to convert a tuple to a dictionary.
+t = ((1, 2), (3, 4), (5, 6))
+d = dict((y,x) for [x,y] in t)
+print(type(d))
+print(d)
+
+# =====================================================================
+
+# Write a Python program to unzip a list of tuples into individual lists
+t = ((1,2),(6,8),(7,8))
+x,y,z=t
+print(list(x))
+print(list(y))
+print(list(z))
+print(list(zip(*t)))
+
+# ===============================================================
+
+# Write a Python program to reverse a tuple.
+t =(1, 2, 3, 4, 5, 6, 7, 'a', 'b')
+print(t[::-1])
+print(tuple(reversed(t)))
+
+#   ==================================================
+
+# Write a Python program to convert a list of tuples into a dictionary.
+t = (('a',2),('b',5),(5,6),(8,9))
+print(dict((y,x) for (x,y) in t))
+print(dict(t))
+
+# ============================================================
+
+# Print a tuple with string formatting
+t = (200,300,400)
+print('This is tuple {0}'.format(t))
+
+# =================================================
+
+# Write a Python program to replace last value of tuples in a list.
+t = [(10, 20, 40), (40, 50, 60), (70, 80, 90)]
+t1 = []
+for i in  t:
+    i=list(i)
+    i[-1]=100
+    t1.append(tuple(i))
+print(list(t1))
+
+#OR
+
+l = [(10, 20, 40), (40, 50, 60), (70, 80, 90)]
+for i in l:
+    print(i[:len(i)-1]+(100,))
+
+# ==============================================
+
+# Write a Python program to remove an empty tuple(s) from a list of tuples.
+s = [(),(), ('',), ('a', 'b'), ('a', 'b', 'c'), ('d')]
+for i in s:
+    if len(i)==0:
+        s.remove(i)
+
+print(s)
+
+# ===========================================================
+
+# Write a Python program to sort a tuple by its float element.
+t = [('item1', '12.20'), ('item2', '15.10'), ('item3', '24.5')]
+t = sorted(t,reverse=True)
+
+print(t)
+
+# ==============================================================
+
+# Write a Python program convert a given string list to a tuple
+s = 'python 3.0'
+print(tuple(s))
+
+# ====================================================
+
+# Write a Python program calculate the product, multiplying all the numbers of a given tuple.
+import math
+t=(4, 3, 2, 2, -1, 18)
+t1 = (2, 4, 8, 8, 3, 2, 9)
+print(math.prod(t))
+print(math.prod(t1))
+
+#Or
+
+t=(4, 3, 2, 2, -1, 18)
+prod = 1
+for i in t:
+    prod = i*prod
+print(prod)
+
+# ======================================
+
+# Write a Python program to calculate the average
+# value of the numbers in a given tuple of tuples.
+def f(a):
+    l = []
+    for i in a:
+        sum = 0
+        for j in i:
+            sum = sum+j
+        avg = sum/len(i)
+        k=round(avg,2)
+        l.append(k)
+    print(l)
+
+f (((10, 10, 10, 12), (30, 45, 56, 45), (81, 80, 39, 32), (1, 2, 3, 4)))
+f(((1, 1, -5), (30, -15, 56), (81, -60, -39), (-10, 2, 3)))
+
+# ====================================================================
+
+# Write a Python program to convert a tuple of string values to a tuple of integer values.
+def f(a):
+
+    for i in a:
+        l = []
+        for j in range(0,len(a) ):
+            b =int(i[j])
+            l.append(b)
+        print(tuple(l))
+
+
+f((('333', '33'), ('1416', '55')))
+
+# OR
+
+def  f(a):
+    def tuple_int_str(tuple_str):
+        result = tuple((int(x[0]), int(x[1])) for x in tuple_str)
+        return result
+
+            print(tuple_int_str(tuple_str))
+
+f((('333', '33'), ('1416', '55')))
+
+# ==========================================================================
+
+# Write a Python program to convert a given tuple of positive integers into an integer.
+def f(a):
+    l=[]
+    for i in a:
+        l.append(str(i))
+    print(''.join(l))
+
+
+f((1, 2, 3))
+f((10, 20, 40, 5, 70))
+
+#OR
+
+def f(a):
+    print(''.join(map(str,a)))
+
+f((1, 2, 3))
+f((10, 20, 40, 5, 70))
+
+# ======================================================
+
+# Write a Python program to check if a specified element presents in a tuple of tuples.
+def f(a,b):
+    sum = 0
+    for i in a:
+        if b in i:
+            sum = sum+1
+    if sum>=1:
+        print('Yes it is present')
+    else:
+        print('it is not present')
+
+
+
+f((('Red', 'White', 'Blue'), ('Green', 'Pink', 'Purple'), ('Orange', 'Yellow', 'Lime')),'White')
+f((('Red', 'White', 'Blue'), ('Green', 'Pink', 'Purple'), ('Orange', 'Yellow', 'Lime')),'Mango')
+
+# ========================================================================
+
+# Print unique rows in a given boolean matrix using Set with tuples
+
+def uni(input):
+    uniq = map(tuple,input)
+    s = set(uniq)
+    for i in s:
+        print(i)
+
+uni([[0, 1, 0, 0, 1],[1, 0, 1, 1, 0],[0, 1, 0, 0, 1],[1, 1, 1, 0, 0]])
+# =============================================================================
+
+
