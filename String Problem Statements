@@ -1,0 +1,602 @@
+# Write a Python program to calculate the length of a string.
+l = []
+for i in range(0,5):
+    n = int(input("Enter the character of string"))
+    l.append(n)
+print(l)
+k=len(l)
+print('length of the string',k)
+# OR
+s = input('Enter the string')
+print(len(s))
+
+# ===========================================================================
+
+# Write a Python program to count the number
+# of characters (character frequency) in a string.
+s = input('Enter the string')
+s = list(s)
+k = dict()
+for i  in s:
+    cont = s.count(i)
+    k.update({i:cont})
+print(k)
+
+# ================================================================
+
+# Write a Python program to get a string made of the first 2 and the last 2 chars
+# from a given a string. If the string length is less than 2, return instead of the empty string.
+s = input('Enter the string')
+if len(s) >= 4:
+    print(s[0] + s[1] + s[-2] + s[-1])
+elif 3 <= len(s) >1 :
+    print(s[0]+s[-1])
+else:
+    print(' ')
+
+# =========================================================
+
+# Write a Python program to get a string from a given string where all
+# occurrences of its first char have been changed to '$', except the first char itself.
+s = input('Enter the string ')
+s1 = list(s)
+for i in range(1,len(s1)):
+    if s1[i] == s1[0]:
+        s1[i] = '$'
+s3= ''.join(s1)
+print(s3)
+
+# =====================================================================
+
+# Write a Python program to get a single string from two given strings,
+# separated by a space and swap the first two characters of each string.
+s1 = input('Enter the first string ')
+s2 = input('Enter the second string ')
+a = list(s1)
+a1 = a.copy()
+b = list(s2)
+b1 = b.copy()
+a[0]=b1[0]
+a[1]=b1[1]
+b[0]=a1[0]
+b[1]=a1[1]
+c =a+b
+print(''.join(c))
+
+# ===========================================================
+
+# Write a Python program to add 'ing' at the end of a
+# given string (length should be at least 3). If the given string already ends
+# with 'ing' then add 'ly' instead. If the string length of the given string
+# is less than 3, leave it unchanged.
+s = input('Enter the string ')
+s = list(s)
+if len(s)>=3:
+    if s[len(s)-3:len(s)+1]!=['i','n','g']:
+        s[len(s)-3:len(s)+1]= 'ing'
+        print(''.join(s))
+    elif s[len(s)-3:len(s)+1] ==['i','n','g']:
+        s[len(s)-3:len(s)+1] = 'ly'
+        print(''.join(s))
+else:
+    print(''.join(s))
+
+# ==========================================================
+
+# Write a Python program to find the first appearance of the substring 'not'
+# and 'poor' from a given string, if 'not' follows the 'poor',
+# replace the whole 'not'...'poor' substring with 'good'. Return the resulting string.
+s = input('Enter the string')
+a = s.find('not')
+b = s.find('poor')
+
+if a >= 0 and a<b:
+    s = list(s)
+    s[a:b+4]="good"
+    print(''.join(s))
+else:
+    print(s)
+    
+# ==========================================================
+
+# Write a Python function that takes a list of words
+# and return the longest word and the length of the longest one.
+l =[]
+def largest_word():
+    for i in range(0,4):
+        a=input('Enter the word')
+        l.append((len(a),a))
+    l.sort()
+    print('Length of largest word and word = ',l[-1])
+largest_word()
+
+# ====================================================================
+
+#Write a Python program to remove the nth
+# index character from a nonempty string.
+s = input('Enter the string')
+n = int(input('Enter the index of character you want to remove'))
+first = s[0:n]
+send = s[n+1:]
+print(first+send)"""
+#OR
+"""def remove_char(str, n):
+    first_part = str[:n]
+    last_part = str[n + 1:]
+    return first_part + last_part
+
+
+print(remove_char('Python', 0))
+print(remove_char('Python', 3))
+print(remove_char('Python', 5))
+
+# ===========================================================
+
+#Write a Python program to change a given
+# string to a new string where the first and last chars have been exchanged.
+s = input('Enter the string')
+fst = s[0]
+scd =s[-1]
+mdl = s[1:len(s)-1]
+print(scd+mdl+fst)
+
+# ========================================================
+
+# Write a Python program to remove the characters which have
+# odd index values of a given string.
+s = input('Enter the string')
+s1=''
+s2=''
+for i in range(0,len(s)):
+    if i % 2 != 0:
+        s1=s1+s[i]
+    elif i%2 == 0:
+        s2=s2+s[i]
+print(s2)
+
+# ==================================================
+# Write a Python program to count the occurrences of each word in a given sentence.
+s = input('Enter the statement')
+d=dict()
+s1=s.split()
+for i in s1:
+    d.update({i:s1.count(i)})
+print(d)
+
+# ================================================================
+
+# Write a Python script that takes input from the user
+# and displays that input back in upper and lower cases.
+s = input('Enter the string')
+print(s.upper())
+print(s.lower())
+
+# ================================================================
+
+# Write a Python program that accepts a comma separated sequence of words
+# as input and prints the unique words in sorted form (alphanumerically).
+s = input('Enter the string of comma separated words')
+s= s.split(',')
+s1 = list(s)
+s1.sort()
+s2 = set(s1)
+print(','.join(s2))
+
+# ============================================================================
+
+# Write a Python function to create the HTML string with tags around the word(s)
+def html(n,m):
+    #n = input('Enter tag')
+    #m = input('Enter string')
+    c = '<',n,'>',m,'<','/',n,'>'
+    print( ''.join(c))
+html('i','piyush')
+
+# ============================================================================
+
+# Write a Python function to insert a string in the middle of a string.
+def func(str1,str2):
+    #str1 = "my name is khan"
+    #str2 = 'piyush'
+    s = str(str1)
+    l = len(s)
+    if l%2==0:
+        k = l/2
+        s1 = str(s[0:k])
+        s3 = str(s[k:])
+        j = str(s1)+str2+str(s3)
+        print(' '.join(j))
+    #else:
+     #   s[int(l+1/2)]+= str2
+func("my name is khan",'piyush')
+
+#===========================================================
+
+# Write a Python function to get a string made of 4 copies
+# of the last two characters of a specified string
+def copy_two(a):
+    c=a[-2:]
+    mul=c*3
+    print(mul)
+    
+    
+copy_two('python')
+
+# =================================================================
+
+# Write a Python function to get a string made of its first three characters
+# of a specified string. If the length of the string is less
+# than 3 then return the original string.
+
+def last_three(a):
+    if len(a)>=3:
+        print(a[0:3])
+    else:
+        print(a)
+
+
+last_three('python')
+last_three('my')
+
+# =================================================================
+
+# Write a Python program to get the last part of a
+# string before a specified character.
+def last_part(a,b):
+    c=a.split('-')
+    d=b.rsplit('/',1)
+    print(c[0])
+    print(d[0])
+last_part('https://www.w3resource.com/python-exercises','https://www.w3resource.com/python')
+
+# =========================================================================================
+
+#  Write a Python function to reverses a string if it's length is a multiple of 4.
+def rev(a):
+    if len(a)%4==0:
+        print(a[::-1])
+
+
+rev('your')
+rev('what')
+rev('how')
+
+# ============================================================
+
+# Write a Python function to convert a given string to all
+# uppercase if it contains at least 2 uppercase characters in the first 4 characters.
+def upr(a):
+    if len(a)>=4:
+        sum1 = 0
+        sum2 = 0
+        for i in range(0, 4):
+            if a[i].isupper() ==1:
+                sum1 = sum1 +1
+            elif a[i].isupper()==0:
+                sum2=sum2+1
+        if sum1 >= 2:
+            b = a.upper()
+            print(b)
+        else:
+            print(a)
+    else:
+        print(a)
+
+upr('myn')
+upr('YoUrname')
+upr('Your')
+
+# =========================================================
+
+# Write a Python program to sort a string lexicographically.
+def lexi(a):
+    b = sorted(a)
+    print(b)
+
+lexi('w3resource')
+lexi('quickbrown')
+
+# ==========================================================
+
+# Write a Python program to remove a newline in Python.
+def newline(a):
+    print(a,end=" ")
+newline('how')
+newline('Where')
+#OR
+str='Python Exercises\n'
+print(str.rstrip('\n'))
+
+# ==========================================================
+
+# Write a Python program to check whether a string starts with specified characters.
+str = 'w3resource.com'
+print(str.startswith('w3r'))
+
+# ==============================================================
+
+# Write a Python program to create a Caesar encryption
+s = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+s1 = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+l =[]
+def cea(a):
+    b=list(a)
+    for i in b:
+        if i.isupper()==1:
+            ind =s1.index(i)+2
+            k =s1[ind]
+            l.append(k)
+        elif i.islower()==1:
+            ind = s.index(i)+2
+            k = s[ind]
+            l.append(k)
+    print(''.join(l))
+
+
+cea('abc')
+
+# =======================================================
+
+# Write a Python program to display formatted text (width=50) as output.
+import textwrap
+def txt(a):
+    print(textwrap.fill(a,width=50))
+
+
+txt('''Python is a widely used high-level, general-purpose, interpreted,
+  dynamic programming language. Its design philosophy emphasizes
+  code readability, and its syntax allows programmers to express
+  concepts in fewer lines of code than possible in languages such
+  as C++ or Java.''')
+
+# ==========================================================================
+
+# Write a Python program to remove existing indentation
+# from all of the lines in a given text.
+import textwrap
+def ind(a):
+    print(textwrap.dedent(a))
+
+
+ind('''
+  Python is a widely used high-level, general-purpose, interpreted,
+  dynamic programming language. Its design philosophy emphasizes
+  code readability, and its syntax allows programmers to express
+  concepts in fewer lines of code than possible in languages such
+  as C++ or Java.''')
+
+# ======================================================================
+
+# Write a Python program to add a prefix text to all of the lines in a string.
+import textwrap
+def pre(a):
+    c=textwrap.indent(a,'>')
+    print(textwrap.dedent(c))
+
+
+pre('''
+   Python is a widely used high-level, general-purpose, interpreted,
+  dynamic programming language. Its design philosophy emphasizes
+  code readability, and its syntax allows programmers to express
+  concepts in fewer lines of code than possible in languages such
+  as C++ or Java.''')
+  
+# =======================================================================
+
+# Write a Python program to set the indentation of the first line.
+
+import textwrap
+def ind(a):
+    print(textwrap.fill(a,initial_indent='',subsequent_indent='  '*4,width=60))
+
+
+ind('''
+  Python is a widely used high-level, general-purpose, interpreted,
+  dynamic programming language. Its design philosophy emphasizes
+  code readability, and its syntax allows programmers to express
+  concepts in fewer lines of code than possible in languages such
+  as C++ or Java.''')
+
+# =======================================================================
+
+# Write a Python program to print the following floating numbers upto 2 decimal places.
+
+def deci(a):
+    a1=str(a)
+    a3 = a1.split('.')
+    if len(a3[1]) >= 3:
+        a2 = a3[0:2]
+        if int(a2[1][3])<5:
+            a4=a2+0.001
+            print(a4)
+        else:
+            print(a2)
+    else:
+        print(a)
+deci(12.325569)
+
+#OR
+
+def rnd(a):
+    print( round(a,2))
+rnd(15.5999)
+rnd(15.5564)
+
+#============================================
+
+# Write a Python program to print the following floating
+# numbers upto 2 decimal places with a sign
+def rnd_sign(a):
+    print("formated number: {:+.2f}".format(a))
+
+rnd_sign(16.5589)
+#or
+def sin(a):
+    c = '+'+ str(round(a,2))
+    print('Sign',''.join(c))
+sin(16.5596)
+
+#  ================================================
+
+# Write a Python program to print the following floating numbers with no decimal places.
+def flt(a):
+    print(round(a))
+
+
+flt(15.63324)
+# or
+n=float(input('Enter the number'))
+print(""+"{:.0f}".format(n))
+
+# ============================================================
+
+#Write a Python program to print
+# the following integers with zeros on the left of specified width.
+def zero(a):
+    c = str(0)+str(a)
+    print(c)
+
+zero(5)
+
+# ====================================================================
+
+# Write a Python program to print the following integers with '*' on
+# the right of specified width.
+def add(a):
+    c = str(a)+'*'
+    print(''.join(c))
+add(55)
+
+# =======================================================================
+
+# Write a Python program to display a number with a comma separator.
+def coma(a):
+    c = '{:,}'.format(a)
+    print(c)
+
+coma(12250125)
+
+# or
+
+def coma(a):
+    c = format(a,',')
+    print(c)
+
+coma(12250125)
+
+# =======================================================================
+
+# Write a Python program to format a number with a percentag
+def per(a):
+    b = format(a,'%')
+    print(b)
+
+per(0.025)
+per(0.35)
+
+#OR
+
+def per(a):
+    b = "{:.2%}".format(a)
+    print(b)
+
+per(0.0256)
+
+# ===========================================================
+
+# Write a Python program to count occurrences of a substring in a string.
+def sub(a):
+    b = a.split()
+    print(b.count('fox'))
+
+sub('The quick brown fox jumps over the lazy fox')
+
+# ==============================================================
+
+# Write a Python program to reverse a string.
+s = input('Enter the string')
+s1= s[::-1]
+
+print(s1)
+print(''.join(reversed(s)))
+
+# ===================================================
+
+# Write a Python program to reverse words in a string
+s = input('Enter the string')
+s1 = s.split()
+print(' '.join(s1[::-1]))
+print(' '.join(reversed(s1)))
+
+# =====================================================
+
+# Write a Python program to strip a set of characters from a string.
+s = input('Enter the string')
+s1 = list(s)
+k = ['a','e','i','o','u']
+for i in s1:
+    for j in k:
+        if i == j:
+            s1.remove(i)
+print(''.join(s1))
+
+# =========================================================
+
+# Write a Python program to reverse words in a string.
+a = 'The quick brown fox jumps over the lazy dog.'
+def f(a):
+    print(' '.join(str(a).split()[::-1]))
+
+f('The quick brown fox jumps over the lazy dog.')
+
+# =============================================================
+
+# Write a Python program to strip a set of characters from a string.
+a='The quick brown fox'
+def f(a):
+    print(str(a).replace('a','').replace('e','').replace('i','').replace('o','').replace('u',''))
+
+f('The quick brown fox')
+
+# ==========================================================
+
+# Write a Python program to count repeated characters in a string.
+a = 'thequickbrownfoxjumpsoverthelazydog'
+l = list(filter(lambda x: (x,a.count(x)) if a.count(x) > 1 else None,a))
+print(l)'''
+'''d = {}
+for i in a:
+    if a.count(i)>1:
+        d[i]=a.count(i)
+        #print(i,'appered',a.count(i),'times')
+print(d)
+
+# =================================================
+
+# Print the square and cube symbol in the area of a rectangle and volume of a cylinder
+area = 1256.66
+volume = 1254.725
+print('Area of rectangle',area,'cm\u00b2')
+print('Volume of rectangle',volume,'cm\u00b3')
+
+# ==============================================
+
+# Write a Python program to print the index of the character in a string. Go to the editor
+# Sample string:
+s = 'w3resource'
+s = list(map(lambda x:(x,s.index(x)),s))
+print(s)
+
+# =============================================
+
+# Write a Python program to check whether a string contains all letters of the alphabet.
+#for i in dict(c):
+def f(c):
+    c = set(c.lower())
+    if len(c)==27:
+        print('All alphabates are present')
+    else:
+        print('All alphabates are not present')
+
+f('The quick brown fox jumps over the lazy dog')
+f('The quick brown fox jumps over the lazy cat')
