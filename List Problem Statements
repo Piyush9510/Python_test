@@ -1,0 +1,569 @@
+# Write a Python program to sum all the items in a list.
+
+l = []
+sum = 0
+for i in range(1,5):
+    l1=int(input('Enter the list'))
+    l.append(l1)
+for j in l:
+    sum = sum+j
+print(sum)"""
+import random
+import string
+
+"""def sm(items):
+    sum = 0
+    for i in items:
+        sum = sum+i
+    print(sum)
+
+
+sm([1, 2, 3, 4])
+
+# ============================================================
+
+# Write a Python program to multiply all the items in a list.
+
+def ml(items):
+    pl = 1
+    for i in items:
+        pl = pl * i
+    print(pl)
+
+ml([3,4,5,6,2])
+
+# ====================================================================
+
+# Write a Python program to get the largest number from a list.
+def lr(items):
+    num =-100
+    for i in items:
+        if i>num:
+            num=i
+    print(num)
+
+lr([4,5,6,7,3,2,1])
+lr([-1,-2,-4,-5,-6])
+
+# =================================================================
+
+# Write a Python program to get the smallest number from a list.
+def sm(items):
+    lr=50000
+    for i in items:
+        if i<lr:
+            lr = i
+    print(lr)
+
+sm([5,66,54,34,69,89])
+
+# ===========================================================================
+
+# Write a Python program to count the number of strings where the string length
+# is 2 or more and the first and last character are same from a given list of strings
+
+def cnt(items):
+    a = items.split()
+    sum=0
+    for i in a:
+        b = len(i)
+        if b>=2 and i[0]==i[b-1]:
+            sum=sum+1
+    print(sum)
+
+
+cnt('where ara you beeb 1231')
+cnt('whew geg 1221 yoy gg')
+
+# ===========================================================
+
+# Write a Python program to get a list, sorted in increasing
+# order by the last element in each tuple from a given list of non-empty tuples.
+def inc(tuples):
+    b=sorted(tuples,key=lambda tuples:tuples[1])
+    print(b)
+inc( [(2, 5), (1, 2), (4, 4), (2, 3), (2, 1)])
+
+# ================================================================================
+
+# Write a Python program to remove duplicates from a list
+def lt(items):
+    b = set(items)
+    print(b)
+
+lt([1,2,3,2,5,4,5,6,6])
+
+#OR
+
+def lt(items):
+    s = []
+    for i in items:
+        if i not in s:
+            s.append(i)
+    print(s)
+    lt([1,2,3,2,5,4,5,6,6])
+    
+# ==========================================================
+
+# Write a Python program to check a list is empty or not.
+
+def ept(items):
+    if len(items)==0:
+        print('Set is empty')
+    else:
+        print('Set is not empty')
+
+ept([])
+ept([2,5])
+ept([5])
+
+# =====================================================
+
+# Write a Python program to clone or copy a list.
+def cp(a):
+    b=list(a)
+    print(b)
+    print(a)
+
+cp([1,2,3,2,5,4,5,6,6])
+
+# ==============================================================
+
+# Write a Python program to find the list of words that
+# are longer than n from a given list of words.
+def leg(items,n):
+    b = items.split()
+    l=[]
+    for i in b:
+        if len(i)>=n:
+            l.append(i)
+    print(l)
+leg("The quick brown fox jumps over the lazy dog",4)
+
+# ===================================================================
+
+#  Write a Python function that takes two lists and returns
+#  True if they have at least one common member.
+def fuc(a,b):
+    sum = 0
+    for i in a:
+        for j in b:
+            if i == j:
+                sum = sum+1
+    if sum>=1:
+        print('True')
+    else:
+        print('False')
+
+fuc([1,2,3,4,5], [5,6,7,8,9])
+fuc([1,2,3,4,5], [6,7,8,9])
+
+# ========================================================
+
+# Write a Python program to print a specified
+# list after removing the 0th, 4th and 5th elements.
+def fuc(a):
+    l=[0,4,5]
+    l = l[::-1]
+    for i in l:
+        a.pop(i)
+    print(a)
+
+fuc(['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow'])
+
+# ======================================================================
+
+# Write a Python program to shuffle and print a specified list
+def fuc(a):
+    b = set(a)
+    print(b)
+
+
+fuc(['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow'])
+
+#OR
+
+def fuc(a):
+    import random
+    random.shuffle(a)
+    print(a)
+
+
+fuc(['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow'])
+
+# OR
+
+from random import shuffle
+fuc=['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(fuc)
+print(fuc)
+
+# ==============================================================
+
+# Write a Python program to generate and print a list of
+# first and last 5 elements where the values are square of
+# numbers between 1 and 30 (both included).
+def f():
+    l1=[]
+    l2=[]
+    for i in range(1,6):
+        l=i**2
+        l1.append(l)
+    for i in range(25,31):
+        l = i ** 2
+        l2.append(l)
+    print(l1)
+    print(l2)
+
+
+f()
+
+# =============================================================
+
+# Write a Python program to generate and print a list except
+# for the first 5 elements, where the values are square of numbers between 1 and 30 (both included)
+def f():
+    l =[]
+    for i in range(6,31):
+        l1 = i**2
+        l.append(l1)
+    print(l)
+
+
+f()
+# ======================================================================
+
+# Write a Python program to generate all permutations of a list in Python
+def f(a):
+    import itertools
+    l=list(itertools.permutations(a))
+    print(l)
+
+f([1,2,3])
+
+# ================================================================
+
+# Write a Python program to get the difference between the two lists.
+def f(a,b):
+    l=[]
+    for i in a:
+        for j in b:
+            if i==j:
+                l.append(i)
+    for i in l:
+        if i in a and i in b:
+            a.remove(i)
+            b.remove(i)
+        elif i in b:
+            b.remove(i)
+        elif i in a:
+            a.remove(i)
+    print(a+b)
+
+f([1, 3, 5, 7, 9],[1, 2, 4, 6, 7, 8])
+
+# Or
+
+def f(a,b):
+    l1=list(set(a)-set(b))
+    print(l1)
+    l2 = list(set(b)-set(a))
+    print(l2)
+    l=l1+l2
+    print(l)
+
+f([1, 3, 5, 7, 9],[1, 2, 4, 6, 7, 8])
+
+# =================================================================
+
+# Write a Python program access the index of a list.
+def f(a):
+    for i in a:
+        print(a.index(i),i)
+
+
+f([5, 15, 35, 8, 98])
+
+# =====================================================================
+
+# Write a Python program to convert a list of characters into a string.
+def f(a):
+    s = "".join(a)
+    print(s)
+
+f(['p','y','t','h','o','n'])
+
+# ===================================================================
+
+# Write a Python program to find the index of an item in a specified list.
+def f(b,a):
+    print(b.index(a))
+
+f([10,20,30,-2,-5],-2)
+
+#  ========================================================================
+
+# Write a Python program to flatten a shallow list.
+def f(a):
+    import itertools
+    l=list(itertools.chain(*a))
+    print(l)
+
+f([[1,2,3],[2,5,6],[6,8,9]])
+
+# =============================================================
+
+# Write a Python program to append a list to the second list.
+def f(a,b):
+     a.extend(b)
+     print(a)
+
+
+f([1,2,3],['A','B','c'])
+
+#Or
+
+def f(a,b):
+     c = a+b
+     print(c)
+
+
+f([1,2,3],['A','B','c'])
+
+# ====================================================
+
+# Write a Python program to select an item randomly from a list.
+
+def f(a):
+    import random
+    c = random.choice(a)
+    print(c)
+
+
+f([1,2,3,6,5])
+
+# ===============================================================
+
+#  Write a python program to check whether two lists are circularly identical.
+def f(a,b,c):
+    b1= ' '.join((map(str,b)))
+    a1=' '.join(map(str,a*2))
+    c1 = ' '.join(map(str,c))
+    print(b1,a1)
+    print( b1 in a1)
+    print( c1 in a1)
+    
+    f([10, 10, 0, 0, 10],[10, 10, 10, 0, 0],[1, 10, 10, 0, 0])
+
+#  ====================================================================
+
+# Write a Python program to find the second smallest number in a list.
+def f(a):
+    if len(a)<=2:
+        if a[0]==a[1]:
+            print('both number are equal')
+        else:
+            a.sort()
+            print("secound smalles number =",a[1])
+    else:
+        b=set(a)
+        c=list(sorted(b))
+        print(c[1])
+
+
+f([1, 1, 0, 0, 2, -2, -2])
+f([1, 2, -8, -2, 0, -2])
+
+#===========================================================
+
+#  Write a Python program to get unique values from a list.
+def f(a):
+    s = set(a)
+    print(list(s))
+
+f([10, 20, 30, 40, 20, 50, 60, 40])
+
+# =========================================================
+
+# Write a Python program to get the frequency of the elements in a list.
+
+def f(a):
+    for i  in set(a):
+        print('Number =',i,'Frequency',a.count(i))
+
+f([10,10,10,10,20,20,20,20,40,40,50,50,30])
+
+# =================================================================
+
+# Write a Python program to count the number of elements in a list within a specified range.
+def f(a):
+    sum = 0
+    for i in a:
+        if i in range(40,100):
+            sum=sum+1
+    print(sum)
+
+f([10,20,30,40,40,40,70,80,99])
+
+# ==================================================================
+
+# Write a Python program to check whether a list contains a sublist.
+def f(a,b):
+    a = set(a)
+    b = set(b)
+    print(b.issubset(a))
+
+f([2,4,3,5,7],[4,3])
+f([2,4,3,5,7],[3,7])
+
+# =======================================================================
+
+# Write a Python program to generate all sublists of a list.
+def f(a):
+    for i in a:
+        s = [i]
+        s1 = []
+        print(s,end=' ')
+    for i in range(0,len(a)+1):
+        for j in range(0,len(a)+1):
+            if i!=j:
+                s1.append([i,j])
+    print(s1)
+
+
+f([10, 20, 30, 40])
+
+# ================================================================
+
+# Write a Python program to create a list by concatenating a given list which range goes from 1 to n
+def f(a,b,c):
+    l =[]
+    for i in range(1,c+1):
+        d='a'+str(i)
+        e='b'+str(i)
+        l.append(d)
+        l.append(e)
+    print(l)
+    
+
+
+f('p','q',5)
+
+# ===================================================================
+
+# Write a Python program to get variable unique identification number or string.
+def f(a):
+    print(id(a))
+
+f(100)
+f('a')
+
+# =====================================================================
+
+# Write a Python program to find common items from two lists.
+def f(a,b):
+    print(set(a).intersection(set(b)))
+
+
+f(["Red", "Green", "Orange", "White"],["Black", "Green", "White", "Pink"])
+
+# ===================================================================
+
+# Write a Python program to change the position of every n-th value with the (n+1)th in a list.
+def f(a):
+    l =[]
+    for i in range(0,len(a)):
+        if i%2==0:
+            c=a[i]
+            d=a[i+1]
+            k=d
+            e=c
+            l.append(k)
+            l.append(e)
+        else:
+            continue
+    print(l)
+
+
+f([0,1,2,3,4,5])
+
+# ==============================================================
+
+# Write a Python program to convert a list of multiple integers into a single integer.
+def f(a):
+    c=''
+    for i in a:
+        c= c+str(i)
+    print(c)
+f([11, 33, 50])
+#or
+def f(a):
+    c=int(''.join(map(str,a)))
+    print(c)
+
+
+f([11, 33, 50])
+
+# =====================================================================
+
+# Write a Python program to split a list based on first character of word.
+
+def f(a):
+    l = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    for i in l:
+        k=[]
+
+        for j in a:
+            if str(j).startswith(i):
+                k.append(j)
+                if len(k)>=1:
+                    m = ' '.join(k)
+                    print(i,m)
+
+                #print(j)
+
+
+
+f(['be','have','do','say','get','make','go','know','take','see','come','think',
+     'look','want','give','use','find','tell','ask','work','seem','feel','leave','call'])
+
+# =====================================================================
+
+#  Write a Python program to generate all sublists of a list.
+
+from itertools import combinations
+def sub_lists(my_list):
+	subs = []
+	for i in range(0, len(my_list)+1):
+	  temp = [list(x) for x in combinations(my_list, i)]
+	  if len(temp)>0:
+	    subs.extend(temp)
+	return subs
+    
+#OR
+
+from itertools import combinations
+
+def f(s):
+	c = []
+	for i in range(len(s)+1):
+		a = list(combinations(s,i))
+		for j in a:
+			list(j)
+			c.extend([j])
+	print(c)
+
+f([10, 20, 30, 40])
+
+# ====================================================
+
+#Write a Python program to create a list by concatenating a given list which range goes from 1 to n
+#Sample list : ['p', 'q']
+#n =5
+def f(a,b):
+	l = []
+	for i in range(1,b+1):
+		l.extend(['a{}'.format(i),'b{}'.format(i)])
+	return l
+
+print(f(['p', 'q'],4))
