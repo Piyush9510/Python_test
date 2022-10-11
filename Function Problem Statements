@@ -1,0 +1,298 @@
+# Write a Python function to find the Max of three numbers.
+def f(a):
+    return max(a)
+
+
+print(f([2,55,69]))
+
+# or
+
+import keyword
+import string
+
+def fn(x,y,z):
+    if x >y and x>z:
+        return x
+    elif y>z:
+        return y
+    else:
+        return z
+
+print(fn(5,15,9))
+
+# =====================================================
+
+# Write a Python function to sum all the numbers in a list.
+def f(a):
+    sum = 0
+    for i in a:
+        sum=sum + i
+    return sum
+
+print(f([8, 2, 3, 0, 7]))
+ 
+ #OR
+
+def fn(a):
+    return sum(a)
+
+print(fn((8, 2, 3, 0, 7)))
+
+# ===================================================
+
+# Write a Python function to multiply all the numbers in a list.
+def f(a):
+    prd = 1
+    for i in a:
+        prd = prd * i
+    return prd
+
+print(f([8, 2, 3, -1, 7]))
+
+# =========================================
+
+# Write a Python program to reverse a string.
+def f(a):
+    return a[::-1]
+
+print(f('1234abcd'))
+#or
+def fn(a):
+
+     return ''.join(list(reversed(a)))
+
+print(fn('1234abcd'))
+
+# ==========================================
+
+# Write a Python function to calculate the factorial of a number
+# (a non-negative integer). The function accepts the number as an argument
+def f(a):
+    fact = 1
+    for i in range(a,0,-1):
+        fact= fact*i
+    return fact
+
+print(f(9))
+
+# or
+
+import math
+def f(a):
+    return math.factorial(a)
+
+print(f(9))
+
+# ============================================
+
+#  Write a Python function to check whether a number falls in a given range.
+def f(a):
+    if a in range(0,100):
+        print('Yes it is prsent')
+    else:
+        print('It is not present')
+
+
+f(5)
+f(101)
+
+# ===========================================================================
+
+# Write a Python function that accepts a string and
+# calculate the number of upper case letters and lower case letters.
+def f(a):
+    s = list(a)
+    d = {'up':0,'lw':0}
+    for i in s:
+        if i.isupper()==1:
+            d['up'] += 1
+        elif i.islower()==1:
+            d['lw'] += 1
+    print('Number of upper characters =',d['up'])
+    print('Number of lower characters =',d['lw'])
+
+f('The quick Brow Fox')
+
+# =============================================================
+
+# Write a Python function that takes a number
+# as a parameter and check the number is prime or not.
+def f(a):
+    sum = 0
+    if a == 2:
+        print('It is the prime number')
+    else:
+        for i in range(1,a+1):
+            if a % i == 0:
+                sum = sum+1
+    if sum>2:
+        print('It is the prime number')
+    else:
+        print('It is not the prime number')
+
+f(5)
+f(6)
+f(1)
+f(2)
+
+# ===================================================
+
+#  Write a Python program to print the even numbers from a given list.
+def f(a):
+    l = []
+    for i in a:
+        if i%2==0:
+            l.append(i)
+    print(l)
+
+
+f([1, 2, 3, 4, 5, 6, 7, 8, 9])
+
+# ==============================================================
+
+#  Write a Python function to check whether a number is perfect or not.
+def f(a):
+    sum1=0
+    for i in range(1,a):
+        if a%i==0:
+            sum1= sum1+i
+    if sum1 == a:
+        print('Number is perfect number')
+    else:
+        print('Number is not a perfect number')
+
+
+f(6)
+f(7)
+
+# =====================================================================
+
+# Write a Python function that checks whether a passed string is palindrome or not.
+
+def f(a):
+    if len(str(a))>1:
+        if str(a) == str(a)[::-1]:
+            print('Number is pallidrom')
+        else:
+            print('Number is not pallindrom')
+    else:
+        print('It is single digit number')
+
+f(1661)
+f(1531)
+f(5)
+f(55)
+f('madam')
+
+# ==========================================================
+
+# Write a Python function that prints out the first n rows of Pascal's triangle.
+def f(n):
+    from math import factorial
+    for i in range(0,n):
+        for j in range(n-i,0,-1):
+            print(' ',end= '')
+
+        for j in range(0,i+1):
+            print(factorial(i)//(factorial(j)*factorial(i-j)),end=' ')
+
+        print()
+
+f(5)
+f(7)
+f(10)
+
+# ===================================================================
+
+# Write a Python function to check whether a string is a pangram or not
+def f(p):
+    k = set(string.ascii_lowercase)
+    p = set(list(p.lower()))
+    sum = 0
+    for i in p:
+        if i in k :
+            sum = sum+1
+    if sum==26:
+        print('It is pangram')
+    else:
+        print('It is not pangram')
+
+f('The quick brown fox jumps over the lazy dog')
+f('Python function to check whether a string is a pangram or not')
+
+# =======================================================================
+
+#  Write a Python program that accepts a hyphen-separated sequence of words
+#  as input and prints the words in a hyphen-separated sequence
+#  after sorting them alphabetically
+def f(a):
+    a = a.split('-')
+    a= sorted(a)
+    print('-'.join(a))
+
+f('green-red-yellow-black-white')
+
+# ====================================================================
+
+# Write a Python function to create and print a list where the
+# values are square of numbers between 1 and 30
+def f(a):
+    l = []
+    for i in range(1,a+1):
+        l.append(i**2)
+    print(l)
+
+f(30)
+
+# =====================================================================
+
+# Write a Python program to execute a string containing Python code.
+
+my = print('Hello  world')
+code=
+def f(a,b):
+    c=a*b
+    print(c)
+    
+f(2,4)
+
+exec(my)
+exec(code)
+
+# ======================================================
+
+# Write a Python program to access a function inside a function.
+def f(a):
+    def k(b):
+        nonlocal a
+        a +=1
+        return a+b
+
+fuc = f(4)
+print(fuc(4))
+
+# ======================================================
+
+# Write a Python program to detect the number of local variables declared in a function.
+def f(a):
+    a =1
+    b = 2
+    st='python'
+    c=5
+
+print(f.__code__.co_nlocals)
+
+# ==================================================
+
+#   Write a Python program that invoke a given function after specific milliseconds
+from  time import sleep
+import math
+def f(f,ms,*args):
+    sleep(ms/1000)
+    return f(*args)
+print("Square root after specific miliseconds:")
+print(f(lambda x: math.sqrt(x), 100, 16))
+print(f(lambda x: math.sqrt(x), 1000, 100))
+print(f(lambda x: math.sqrt(x), 2000, 25100))
+
+
